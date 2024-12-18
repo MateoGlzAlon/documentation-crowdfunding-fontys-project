@@ -1,5 +1,6 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
+sidebar_label: Connect containers
 ---
 
 # Connecting the container to the network
@@ -66,3 +67,5 @@ If the container section is empty, add the container to the network by using:
 ```bash
 network connect <network_name> <container_name>
 ```
+
+Now the containers can "see each other" as if they were on the same host

@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+sidebar_label: Bridge Network
 ---
 
-# Creating the Bridge Network
+# Creating the Bridge Network for connectiong the Backend and database
 
 To set up the bridge network for your Docker containers, follow these steps:
 

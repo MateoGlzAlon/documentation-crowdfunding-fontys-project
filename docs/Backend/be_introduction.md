@@ -40,7 +40,7 @@ Follow these steps to set up the back-end for development:
    - Java 17
    - Gradle 8.1
    - MySQL
-          
+        
 
 2. **Clone the Repository**:
    ```bash
@@ -80,12 +80,8 @@ Follow these steps to set up the back-end for development:
    ```
 
 ##  Run with Docker (optional):
-
-### 1. **Download the image from the DockerHub Repository**:
    - Download the image from the DockerHub repository:
      [DockerHub repository](https://hub.docker.com/r/mateogonzalezz/raisehub_backend/tags)
-
-### 2. **Run the Docker Container**:
    - Run the container with the environment variables:
      ```bash
      docker run -d -e JWT_SECRET=<value> -e MYSQL_USERNAME=<value> -e MYSQL_PASSWORD=<value> --name raisehub_backend_container -p 8080:8080 mateogonzalezz/raisehub_backend:<tag>
