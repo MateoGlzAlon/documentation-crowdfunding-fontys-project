@@ -26,7 +26,6 @@ The **RaiseHub** system follows a **layered architecture** to promote separation
 - **Presentation Layer**: Handled by a Single-Page Application (SPA) built with React, offering users an interactive interface for project creation, funding, and browsing.
 - **Business Logic Layer**: Managed by a back-end API built with Spring Boot, responsible for processing user requests, managing business rules, and interacting with data services.
 - **Data Access Layer**: A relational database (MySQL) that stores all system data, including users, projects, and transactions.
-- **External Systems**: Integrated services such as third-party email systems for notifications and payment gateways for processing transactions.
 
 ## Key Features of the Architecture
 
@@ -40,7 +39,7 @@ The **RaiseHub** system follows a **layered architecture** to promote separation
    The architecture is based on clear, well-defined responsibilities for each component. This reduces the complexity of debugging and testing, ensuring long-term maintainability.
 
 4. **Security**:  
-   By adhering to security best practices, such as user authentication and data validation, RaiseHub ensures that user data and financial transactions are protected.
+   By adhering to security best practices, such as user authentication and data validation, RaiseHub ensures that user data is protected.
 
 ## System Architecture Diagrams
 
@@ -55,8 +54,9 @@ Throughout this section, you will find a series of C4 diagrams that explain the 
 3. **Component Diagram**:  
    Delves into the internal structure of key containers, such as the API Application, and highlights how components such as controllers, services, and repositories interact.
 
-4. **Code Diagram (optional)**:  
+4. **Code Diagram (not included)**:  
    Offers a closer look at the source code structure for specific components when necessary, useful for developers looking to contribute to the system.
+   This diagram is not included in this section as it is not necessary for a system overview.
 
 ## Conclusion
 
