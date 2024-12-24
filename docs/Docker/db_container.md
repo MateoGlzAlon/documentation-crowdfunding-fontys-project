@@ -61,6 +61,7 @@ CREATE TABLE IF NOT EXISTS `payments` (
   KEY `FK7h0as5hqhn845eewc7usiy0x3` (`project_id`),
   KEY `FKj94hgy9v5fw1munb90tar2eje` (`user_id`),
   CONSTRAINT `FK7h0as5hqhn845eewc7usiy0x3` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE
+  CONSTRAINT `FKj94hgy9v5fw1munb90tar2eje` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
