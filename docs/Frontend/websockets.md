@@ -11,6 +11,16 @@ This documentation outlines how WebSocket communication is used to manage projec
 
 ---
 
+## Install StompJS dependency
+
+Install the dependency by using the following command:
+
+```groovy
+npm i @stomp/stompjs
+```
+
+---
+
 ## **1. Subscribing to Project Topics**
 
 When a user logs in, the system automatically subscribes them to all WebSocket topics corresponding to the projects they own. This ensures they receive real-time notifications for payments related to their projects.
