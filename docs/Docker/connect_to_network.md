@@ -48,7 +48,7 @@ You should get an output similar to this (I have hidden the sensitive informatio
                 "IPv6Address": ""
             },
             "HIDDEN": {
-                "Name": "docker_crowdfund_db",
+                "Name": "raisehub_database",
                 "EndpointID": "HIDDEN",
                 "MacAddress": "HIDDEN",
                 "IPv4Address": "HIDDEN",

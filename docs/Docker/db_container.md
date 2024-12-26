@@ -16,14 +16,14 @@ To initialize a MySQL database locally using Docker, follow these steps to creat
 Execute the following command to launch a MySQL container locally on port 3307:
 
 ```bash
-docker run --name docker_crowdfund_db -e MYSQL_DATABASE=crowdfund_db -e MYSQL_USER=<sql_user> -e MYSQL_PASSWORD=<sql_password> -e MYSQL_ROOT_PASSWORD=<sql_root_password> -p 3307:3306 -d mysql
+docker run --name raisehub_database -e MYSQL_DATABASE=crowdfund_db -e MYSQL_USER=<sql_user> -e MYSQL_PASSWORD=<sql_password> -e MYSQL_ROOT_PASSWORD=<sql_root_password> -p 3307:3306 -d mysql
 ```
 
 - You can remove the MYSQL_USER and MYSQL_PASSWORD environment variables if you don't want to create a new user and just use root user. MYSQL_ROOT_PASSWORD can also be removed but it is not recommended as some form of security should be set up.
 
 :::warning
 Replace `<sql_root_password>` with the desired MySQL root password and `<sql_password>` and `<sql_user>` with a secure user password.
-- `docker_crowdfund_db` is a example name for the container
+- `raisehub_database` is a example name for the container
 - `crowdfund_db` is an example name for the database but it is the name set on the **application.properties file** for database origin in the backend container
 
 ```bash, title="application.properties in the back-end container"
