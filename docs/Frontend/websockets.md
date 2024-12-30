@@ -89,7 +89,6 @@ If the project owner is online and subscribed to the corresponding WebSocket top
 ```javascript
 const onPaymentReceived = (data) => {
     const toastMsg = JSON.parse(data.body); // Parse the received message
-    console.log("Payment received: ", toastMsg);
 
     // Display the notification
     toast({
