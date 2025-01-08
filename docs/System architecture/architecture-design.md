@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+sidebar_label: Architectural Constraints
 ---
 # Architectural Constraints and Design Decisions
 
