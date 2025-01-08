@@ -46,6 +46,7 @@ Once the MySQL container is operational, the database tables for the project nee
 Connect to the MySQL container and run the following SQL commands to create the required tables:
 
 ```sql
+-- Dumping database structure for crowdfund_db
 CREATE DATABASE IF NOT EXISTS `crowdfund_db`;
 USE `crowdfund_db`;
 
@@ -59,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 -- Dumping structure for table crowdfund_db.projects
 CREATE TABLE IF NOT EXISTS `projects` (
@@ -77,16 +79,6 @@ CREATE TABLE IF NOT EXISTS `projects` (
   CONSTRAINT `FKhswfwa3ga88vxv1pmboss6jhm` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping structure for table crowdfund_db.project_images
-CREATE TABLE IF NOT EXISTS `project_images` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `image_order` int NOT NULL,
-  `image_url` varchar(255) DEFAULT NULL,
-  `project_id` int NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FKoej10untas4roy2rqxcmbdj42` (`project_id`),
-  CONSTRAINT `FKoej10untas4roy2rqxcmbdj42` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping structure for table crowdfund_db.payments
 CREATE TABLE IF NOT EXISTS `payments` (
@@ -102,6 +94,30 @@ CREATE TABLE IF NOT EXISTS `payments` (
   CONSTRAINT `FKj94hgy9v5fw1munb90tar2eje` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+
+-- Dumping structure for table crowdfund_db.project_images
+CREATE TABLE IF NOT EXISTS `project_images` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `image_order` int NOT NULL,
+  `image_url` varchar(255) DEFAULT NULL,
+  `project_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKoej10untas4roy2rqxcmbdj42` (`project_id`),
+  CONSTRAINT `FKoej10untas4roy2rqxcmbdj42` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- Dumping structure for table crowdfund_db.bookmarks
+CREATE TABLE IF NOT EXISTS `bookmarks` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `project_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK2e83pys34l1inuejvk0s0yp18` (`project_id`),
+  KEY `FKdbsho2e05w5r13fkjqfjmge5f` (`user_id`),
+  CONSTRAINT `FK2e83pys34l1inuejvk0s0yp18` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`),
+  CONSTRAINT `FKdbsho2e05w5r13fkjqfjmge5f` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
 
 ### Part 3: Final Steps
@@ -110,11 +126,42 @@ After executing the SQL script, the database schema for the project will be esta
 
 At this point, a fully operational container with the database and all necessary tables will be ready for development.
 
-## Pulling the Docker image from Docker Hub
+## Pulling the Docker Image from Docker Hub
 
-To pull the Docker image from Docker Hub, you can use the following command:
+To pull the Docker image from Docker Hub, follow these steps:
 
-<!--TO-DO: Push database to docker hub-->
-```bash
+1. **Pull the Image**  
+   Run the following command to pull the image from Docker Hub:
 
-```
+   ```bash
+   docker pull mateogonzalezz/raisehub_database:latest
+   ```
+
+   This command will retrieve the `raisehub_database` image from Docker Hub. The image is pre-configured with the database schema and contains some example data.
+
+2. **Create and Start the Container**  
+   Once the image is pulled, you can create a container from this image and run it. To do so, execute the following command:
+
+   ```bash
+   docker run --name raisehub_database -p 3307:3306 mateogonzalezz/raisehub_database:latest
+   ```
+
+   This will create a new container named `raisehub_database`, map port `3306` from the container to the same port on your local machine, and start the database container.
+
+### Next Steps
+
+After successfully running the container, you can connect to the database using a MySQL client or any application that requires access to the database.
+
+If you need to stop or restart the container, use the following commands:
+
+- To stop the container:
+  ```bash
+  docker stop raisehub_database
+  ```
+
+- To start the container again:
+  ```bash
+  docker start raisehub_database
+  ```
+
+For further configuration, you can adjust environment variables or modify the Docker run command as needed.
