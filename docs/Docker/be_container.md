@@ -58,7 +58,7 @@ You should see `<image_name>` in the output, indicating the image was successful
 
    - Run the container with the environment variables:
      ```bash
-     docker run -d -e JWT_SECRET=<value> -e MYSQL_USERNAME=<value> -e MYSQL_PASSWORD=<value> --name raisehub_backend_container -p 8080:8080 <image_name>
+     docker run -d --name raisehub_backend_container -e JWT_SECRET=<value> -e MYSQL_USERNAME=<value> -e MYSQL_PASSWORD=<value>  -p 8080:8080 <image_name>
      ```
 
     **[You can review the environment variables here](../Backend/environment_variables.md)**

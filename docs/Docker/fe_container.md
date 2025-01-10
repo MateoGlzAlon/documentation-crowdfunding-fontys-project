@@ -101,7 +101,7 @@ Run the container with the appropriate environment variables:
 
 - Run the container with the environment variables:
    ```bash
-   docker run -d --name raisehub_frontend_container -p 3000:3000 -e AWS_BUCKET_NAME=<value> -e AWS_BUCKET_REGION=<value> -e AWS_ACCESS_KEY=<value> -e AWS_SECRET_ACCESS_KEY=<value> raisehub-frontend
+   docker run -d --name raisehub_frontend_container -p 3000:3000 -e AWS_BUCKET_NAME=<value> -e AWS_BUCKET_REGION=<value> -e AWS_ACCESS_KEY=<value> -e AWS_SECRET_ACCESS_KEY=<value> <image_name>
    ```
 
 **[You can review the environment variables here](../Frontend/environment_variables.md)**

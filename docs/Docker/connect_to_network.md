@@ -65,7 +65,7 @@ You should get an output similar to this (I have hidden the sensitive informatio
 If the container section is empty, add the container to the network by using: 
 
 ```bash
-network connect <network_name> <container_name>
+docker network connect <network_name> <container_name>
 ```
 
 Now the containers can "see each other" as if they were on the same host
