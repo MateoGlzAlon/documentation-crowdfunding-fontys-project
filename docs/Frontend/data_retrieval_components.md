@@ -1,5 +1,6 @@
 ---
-sidebar_position: 3
+sidebar_position: 7
+sidebar_label: Data Retrieval Components
 ---
 
 # Data Retrieval Components

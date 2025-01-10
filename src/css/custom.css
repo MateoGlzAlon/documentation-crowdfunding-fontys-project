@@ -39,3 +39,7 @@
   --ifm-navbar-background-color: #D3D3D3;
 
 }
+
+img:not([src$=".svg"]) {
+  border: 0.5px solid black;
+}

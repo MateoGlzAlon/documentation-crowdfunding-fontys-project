@@ -3,7 +3,7 @@ sidebar_position: 2
 sidebar_label: View a project
 ---
 
-# View a project
+# How to view a project
 
 This guide explains the different ways to view project details in RaiseHub
 

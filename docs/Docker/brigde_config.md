@@ -12,7 +12,7 @@ To set up the bridge network for your Docker containers, follow these steps:
 Run the following command to create a new bridge network:
 
 ```bash
-docker network create docker_network_crowdfund
+docker network create <network_name>
 ```
 
 ## 2. List All Docker Networks
@@ -25,4 +25,4 @@ docker network ls
 
 ## 3. Verify the Network Exists
 
-Check that your newly created network, `docker_network_crowdfund`, is in the list of available networks.
+Check that your newly created network, `<network_name>`, is in the list of available networks.

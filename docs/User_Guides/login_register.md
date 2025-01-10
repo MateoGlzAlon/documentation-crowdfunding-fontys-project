@@ -3,7 +3,7 @@ sidebar_position: 3
 sidebar_label: Login / Register
 ---
 
-# Login / Register
+# How to Login / Register
 
 This guide explains the steps to register for a RaiseHub account and log in to the platform.
 
@@ -34,12 +34,10 @@ If you already have a RaiseHub account, follow these steps to log in:
 
 1. **Access the Login Page**  
    Click on the **Log In** button located on the landing page.  
-   ![Click on the Log in button](img/log_in_register/landing_page_logIn.png)
+
+![Click on the Log in button](img/log_in_register/landing_page_logIn.png)
 
 2. **Enter Your Credentials**  
    Fill in the required fields on the login page and click on the **Log In** button. If the login is successful, you will be redirected to the landing page.  
-   ![Fill in the fields](img/log_in_register/login_page_fillFields.png)  
 
----
-
-By following these steps, you can easily register and log in to the platform to start exploring and contributing to projects.
+![Fill in the fields](img/log_in_register/login_page_fillFields.png)  
