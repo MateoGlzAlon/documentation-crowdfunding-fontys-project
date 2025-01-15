@@ -18,7 +18,7 @@ docker pull mateogonzalezz/raisehub_frontend:latest
 ```
 
 Once you have pulled the image, follow this guide to set up the backend container:
- - [Frontend container setup](be_container.md#creating-and-running-the-docker-container)
+ - [Frontend container setup](fe_container.md#creating-and-running-the-docker-container)
 
 You can also visit the [frontend repository on DockerHub](https://hub.docker.com/r/mateogonzalezz/raisehub_frontend).
 
